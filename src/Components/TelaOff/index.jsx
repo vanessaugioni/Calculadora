@@ -1,14 +1,14 @@
 import React from "react";
 import { Container } from "./styles"
+import { Calculadora } from "../Calculadora";
 
-export function TelaOn() {
+export function TelaOff() {
 
     return (
 
         <Container>
             
-
-
+            <Calculadora/>
         </Container>
     )
 }

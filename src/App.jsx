@@ -2,7 +2,7 @@ import React from "react";
 import { Container, Section, Footer } from "./style";
 import { Titulo } from "./Components/Titulo/index";
 import { GlobalStyle } from "./styles/global";
-import { TelaOn } from "./Components/TelaOn";
+import { TelaOff } from "./Components/TelaOff";
 
 export default function App() {
   return (
@@ -10,7 +10,7 @@ export default function App() {
 
       <Section>
         <Titulo />
-        <TelaOn />
+        <TelaOff />
       </Section>
 
       <GlobalStyle />
