@@ -18,5 +18,7 @@ export const Botao = styled.button`
   border-radius: 16px;
   color: ${(props)=> props.colorFont};
 
+  cursor: pointer;
+
 `;
 

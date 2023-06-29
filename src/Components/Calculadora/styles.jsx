@@ -10,14 +10,12 @@ export const Container = styled.main`
   justify-content: space-around;
   align-items: center;
   font-family: Poppins;
-
 `;
 
 export const Content = styled.header`
   display: flex;
   flex-direction: column;
-  justify-content: space-between; 
-
+  justify-content: space-between;
 
   h1 {
     color: #818181;
@@ -33,16 +31,21 @@ export const Content = styled.header`
 `;
 
 export const Section = styled.main`
-background-color: aqua;
-
-article{
   display: flex;
-  flex-flow: now nowrap;
-  justify-content:space-between; 
+  flex-direction: row;
 
+  article {
+    display: flex;
+    flex-direction: column;
 
+  }
+`;
 
-}
+export const Area = styled.section`
+  display: flex;
+  justify-content: space-between;
 
- 
+  padding: 0.5rem;
+
+  gap: 0.5rem;
 `;
