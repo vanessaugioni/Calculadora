@@ -20,5 +20,15 @@ export const Botao = styled.button`
 
   cursor: pointer;
 
+  &:hover{
+
+   border: 2px solid black;  
+
+  }
+
 `;
+
+
+// biblioteca de estilização/movimento. 
+// react - tooltip
 

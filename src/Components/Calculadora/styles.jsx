@@ -3,19 +3,23 @@ import styled from "styled-components";
 //--------------------------------------------------------------
 
 export const Container = styled.main`
-  height: 100%;
+  height: 90%;
   border-radius: 40px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
   font-family: Poppins;
+  padding-top: 8rem; 
+  gap: 3rem;
 `;
 
 export const Content = styled.header`
+
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  margin-left: 4rem;
+  gap: 1rem; 
 
   h1 {
     color: #818181;

@@ -7,7 +7,6 @@ export function TelaOff() {
     return (
 
         <Container>
-            
             <Calculadora/>
         </Container>
     )

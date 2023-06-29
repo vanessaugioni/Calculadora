@@ -16,7 +16,7 @@ export const Section = styled.section`
   align-items: center;
   width: 100%;
   height: 100vh;
-  gap: 25rem;
+  gap: 37rem;
 `;
 
 export const Footer = styled.footer`

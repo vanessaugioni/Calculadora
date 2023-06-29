@@ -133,7 +133,7 @@ export function Calculadora() {
       backgroundColor: "#363035",
       value: "0",
       colorFont: "#29A8FF",
-      widthButton: 12,
+      widthButton: 12.6,
       heightButton: 3.875,
     },
     {
