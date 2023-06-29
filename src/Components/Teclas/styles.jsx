@@ -8,8 +8,8 @@ export const Botao = styled.button`
   align-items: center;
 
   width: ${(props)=> `${props.widthButton}rem`}; 
-  height: 3.875rem; 
-  font-size: 32px;
+  height: ${(props)=> `${props.heightButton}rem`};  
+  font-size: 30px;
   font-family: Poppins;
   font-weight: 500;
 

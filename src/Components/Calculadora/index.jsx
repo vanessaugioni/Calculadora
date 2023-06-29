@@ -8,56 +8,65 @@ export function Calculadora() {
       backgroundColor: "#363035",
       value: 9,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: 8,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
 
     {
       backgroundColor: "#363035",
       value: 7,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: 6,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: 5,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: 4,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: 3,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: 2,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: 1,
       colorFont: "#29A8FF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
   ];
 
@@ -66,40 +75,70 @@ export function Calculadora() {
       backgroundColor: "#4B4B4B6B",
       value: "Ac",
       colorFont: "#A5A5A5",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
-      backgroundColor: "#363035",
-      value: "delete",
+      backgroundColor: "#4B4B4B6B",
+      value: "X",
       colorFont: "#A5A5A5",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#740076",
       value: "/",
       colorFont: "#FFFFFF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#740076",
       value: "*",
       colorFont: "#FFFFFF",
-      widthButton:3.875, 
+      widthButton: 3.875,
+      heightButton: 3.875,
     },
   ];
 
   const array3 = [
     {
-      backgroundColor: "#4B4B4B6B",
+      backgroundColor: "#363035",
       value: "0",
-      colorFont: "#A5A5A5",
-      widthButton:9, 
+      colorFont: "#29A8FF",
+      widthButton: 9,
+      heightButton: 3.875,
     },
     {
       backgroundColor: "#363035",
       value: ".",
-      colorFont: "#A5A5A5",
-      widthButton:3.875, 
+      colorFont: "#29A8FF",
+      widthButton: 3.875,
+      heightButton: 3.875,
+    },
+  ];
+
+  const array4 = [
+    {
+      backgroundColor: "#740076",
+      value: "-",
+      colorFont: "#FFFFFF",
+      widthButton: 3.875,
+      heightButton: 3.875,
+    },
+    {
+      backgroundColor: "#740076",
+      value: "+",
+      colorFont: "#FFFFFF",
+      widthButton: 3.875,
+      heightButton: 6,
+    },
+    {
+      backgroundColor: "#740076",
+      value: "=",
+      colorFont: "#FFFFFF",
+      widthButton: 3.875,
+      heightButton: 6,
     },
   ];
 
@@ -116,35 +155,53 @@ export function Calculadora() {
       </Content>
 
       <Section>
+        <article>
+          <div>
+            {array1.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+              />
+            ))}
+          </div>
+          <div>
+            {array2.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+              />
+            ))}
+          </div>
+          <div>
+            {array3.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+              />
+            ))}
+          </div>
+        </article>
+
         <div>
-          {array1.map((el) => (
+          {array4.map((el) => (
             <Teclas
               backgroundColor={el.backgroundColor}
               value={el.value}
               colorFont={el.colorFont}
-              widthButton ={el.widthButton}
+              widthButton={el.widthButton}
+              heightButton={el.heightButton}
             />
           ))}
         </div>
-        <div>
-          {array2.map((el) => (
-            <Teclas
-              backgroundColor={el.backgroundColor}
-              value={el.value}
-              colorFont={el.colorFont}
-              widthButton ={el.widthButton}
-            />
-          ))}
-        </div>
-        {array3.map((el) => (
-          <Teclas
-            backgroundColor={el.backgroundColor}
-            value={el.value}
-            colorFont={el.colorFont}
-            widthButton ={el.widthButton}
-          />
-        ))}
-        <div></div>
       </Section>
     </Container>
   );

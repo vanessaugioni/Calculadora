@@ -33,9 +33,16 @@ export const Content = styled.header`
 `;
 
 export const Section = styled.main`
-display: flex;
-gap: 4rem; 
+background-color: aqua;
 
+article{
+  display: flex;
+  flex-flow: now nowrap;
+  justify-content:space-between; 
+
+
+
+}
 
  
 `;
