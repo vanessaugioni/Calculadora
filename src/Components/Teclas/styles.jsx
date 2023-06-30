@@ -4,7 +4,7 @@ import { styled } from "styled-components";
 //--------------------------------------------------------------
 
 export const Botao = styled.button`
-  display: flex;
+  display: block;
   justify-content: center;
   align-items: center;
 
@@ -21,14 +21,16 @@ export const Botao = styled.button`
 
   cursor: pointer;
 
-  &:hover{
+  
 
+  &:hover{
+   background-color: ${(props) => props.backgroundHover};
    border: 2.5px solid black;  
    color: white; 
    font-size: 32px;
   }
 
-`;
+`
 
 
 // biblioteca de estilização/movimento. 

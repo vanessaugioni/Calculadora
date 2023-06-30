@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Content, Section, Area } from "./styles";
 import { Teclas } from "../Teclas";
+import { iconDelete, iconFav } from "../../assets/export";
 
 export function Calculadora() {
   const row1 = [
@@ -17,6 +18,8 @@ export function Calculadora() {
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
+      backgroundHover: "#c82513",
+      Img: { iconDelete },
     },
     {
       backgroundColor: "#740076",
@@ -124,6 +127,7 @@ export function Calculadora() {
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
+      backgroundHover: "#249c1e",
     },
   ];
 
@@ -144,14 +148,12 @@ export function Calculadora() {
     },
   ];
 
-  const [contador, setContador] = useState("");
+  const [contador, setContador] = useState(0);
 
   function funcButton(value) {
-    setContador(value);
-
     console.log(value);
+    setContador((prevState) => value + prevState);
   }
-  
 
   useEffect(() => {
     console.log(contador);
@@ -161,11 +163,11 @@ export function Calculadora() {
     <Container>
       <Content>
         <header>
-          <h1>6000/2+3227*2</h1>
+          <h1>{contador}</h1>
         </header>
 
         <article>
-          <h2>{contador}</h2>
+          <h2>231</h2>
         </article>
       </Content>
 
@@ -175,10 +177,13 @@ export function Calculadora() {
             {row1.map((el) => (
               <Teclas
                 backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
                 value={el.value}
                 colorFont={el.colorFont}
                 widthButton={el.widthButton}
                 heightButton={el.heightButton}
+                Img={el.Img}
+                onClick={() => funcButton(el.value)}
               />
             ))}
           </Area>
@@ -187,10 +192,12 @@ export function Calculadora() {
             {row2.map((el) => (
               <Teclas
                 backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
                 value={el.value}
                 colorFont={el.colorFont}
                 widthButton={el.widthButton}
                 heightButton={el.heightButton}
+                onClick={() => funcButton(el.value)}
               />
             ))}
           </Area>
@@ -199,6 +206,7 @@ export function Calculadora() {
             {row3.map((el) => (
               <Teclas
                 backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
                 value={el.value}
                 colorFont={el.colorFont}
                 widthButton={el.widthButton}
@@ -212,10 +220,12 @@ export function Calculadora() {
             {row4.map((el) => (
               <Teclas
                 backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
                 value={el.value}
                 colorFont={el.colorFont}
                 widthButton={el.widthButton}
                 heightButton={el.heightButton}
+                onClick={() => funcButton(el.value)}
               />
             ))}
           </Area>
@@ -228,6 +238,7 @@ export function Calculadora() {
                 colorFont={el.colorFont}
                 widthButton={el.widthButton}
                 heightButton={el.heightButton}
+                onClick={() => funcButton(el.value)}
               />
             ))}
           </Area>
