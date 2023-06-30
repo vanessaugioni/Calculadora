@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Content, Section, Area } from "./styles";
 import { Teclas } from "../Teclas";
 
 export function Calculadora() {
-
   const row1 = [
     {
       backgroundColor: "#4B4B4B6B",
@@ -22,14 +21,14 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "/",
-      colorFont: "#FFFFFF",
+      colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
     },
     {
       backgroundColor: "#740076",
       value: "*",
-      colorFont: "#FFFFFF",
+      colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
     },
@@ -60,7 +59,7 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "-",
-      colorFont: "#FFFFFF",
+      colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
     },
@@ -91,7 +90,7 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "+",
-      colorFont: "#FFFFFF",
+      colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
     },
@@ -122,7 +121,7 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "=",
-      colorFont: "#FFFFFF",
+      colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
     },
@@ -145,6 +144,19 @@ export function Calculadora() {
     },
   ];
 
+  const [contador, setContador] = useState("");
+
+  function funcButton(value) {
+    setContador(value);
+
+    console.log(value);
+  }
+  
+
+  useEffect(() => {
+    console.log(contador);
+  }, [contador]);
+
   return (
     <Container>
       <Content>
@@ -153,13 +165,12 @@ export function Calculadora() {
         </header>
 
         <article>
-          <h2>= 12,454</h2>
+          <h2>{contador}</h2>
         </article>
       </Content>
 
       <Section>
         <article>
-          
           <Area>
             {row1.map((el) => (
               <Teclas
@@ -192,10 +203,11 @@ export function Calculadora() {
                 colorFont={el.colorFont}
                 widthButton={el.widthButton}
                 heightButton={el.heightButton}
+                onClick={() => funcButton(el.value)}
               />
             ))}
           </Area>
-          
+
           <Area>
             {row4.map((el) => (
               <Teclas

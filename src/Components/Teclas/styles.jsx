@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 
+
 //--------------------------------------------------------------
 
 export const Botao = styled.button`
@@ -22,8 +23,9 @@ export const Botao = styled.button`
 
   &:hover{
 
-   border: 2px solid black;  
-
+   border: 2.5px solid black;  
+   color: white; 
+   font-size: 32px;
   }
 
 `;
