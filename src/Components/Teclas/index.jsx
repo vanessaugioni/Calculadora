@@ -1,6 +1,6 @@
 import React from "react";
 import { Botao } from "./styles";
-import { iconDelete } from "../../assets/export";
+
 
 export function Teclas(props) {
   const {
@@ -12,6 +12,7 @@ export function Teclas(props) {
     heightButton,
     handleButton,
     Img,
+    text,
     ...rest
   } = props;
 
@@ -24,9 +25,12 @@ export function Teclas(props) {
       colorFont={colorFont}
       widthButton={widthButton}
       heightButton={heightButton}
+      text={text}
+      
+
       {...rest}
     >
-      {Img ? <img src={srcImage} alt="" /> : value}
+      {Img ? <img src={srcImage} alt="" /> : text}
     </Botao>
   );
 }

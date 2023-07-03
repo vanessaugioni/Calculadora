@@ -10,13 +10,13 @@ export const Botao = styled.button`
 
   width: ${(props)=> `${props.widthButton}rem`}; 
   height: ${(props)=> `${props.heightButton}rem`};  
-  font-size: 30px;
+  font-size: 28px;
   font-family: Poppins;
   font-weight: 500;
 
   background-color: ${(props)=> props.backgroundColor}; 
   border: none; 
-  border-radius: 16px;
+  border-radius: 15px;
   color: ${(props)=> props.colorFont};
 
   cursor: pointer;

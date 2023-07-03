@@ -20,26 +20,36 @@ export const Content = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center; 
-  align-content: center ; 
+  align-content: center; 
   width: 300px;
-  margin-left: 4rem;
+
   gap: 1rem;
   width: 300px;
   word-break: break-all;
 
+  header{
+   display: flex;
+   justify-content: center;
+
+
   h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: end; 
     color: #818181;
     font-size: 24px;
     font-weight: 400px;
-    width: 300px;
+    width: 260px;
     word-break: break-all;
   }
-
+  }
   h2 {
+    display: flex;
+    justify-content: end; 
     color: #fff;
     font-size: 48px;
     font-weight: 500;
-    width: 391px;
+    width: 260px;
   }
 `;
 
