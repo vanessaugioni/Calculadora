@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Container, Content, Section, Area } from "./styles";
 import { Teclas } from "../Teclas";
-import { iconDelete } from "../../assets/export"; 
+import { iconDelete } from "../../assets/export";
 
 export function Calculadora() {
   const row1 = [
     {
       backgroundColor: "#4B4B4B6B",
       text: "Ac",
-      value: "", 
+      value: "",
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
       backgroundHover: "#c82513",
       type: "cancelar",
-     
     },
     {
       backgroundColor: "#4B4B4B6B",
@@ -29,7 +28,7 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "/",
-      text: "/", 
+      text: "/",
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -37,7 +36,7 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "*",
-      text: "*", 
+      text: "*",
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -48,17 +47,16 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 7,
-      text: "7", 
+      text: "7",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
       backgroundHover: "#363030",
-
     },
     {
       backgroundColor: "#363035",
       value: 9,
-      text: "9", 
+      text: "9",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -67,7 +65,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 8,
-      text: "8", 
+      text: "8",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -76,11 +74,10 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "-",
-      text: "-", 
+      text: "-",
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
-      
     },
   ];
 
@@ -88,7 +85,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 4,
-      text: "4", 
+      text: "4",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -97,7 +94,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 5,
-      text: "5", 
+      text: "5",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -106,7 +103,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 6,
-      text: "6", 
+      text: "6",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -115,7 +112,7 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "+",
-      text: "+", 
+      text: "+",
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -126,7 +123,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 1,
-      text: "1", 
+      text: "1",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -135,7 +132,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 2,
-      text: "2", 
+      text: "2",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -144,7 +141,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: 3,
-      text: "3", 
+      text: "3",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -153,12 +150,12 @@ export function Calculadora() {
     {
       backgroundColor: "#740076",
       value: "",
-      text: "=", 
+      text: "=",
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
       backgroundHover: "#249c1e",
-      type: "calcular",
+      type: "calc",
     },
   ];
 
@@ -166,7 +163,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: "0",
-      text: "0", 
+      text: "0",
       colorFont: "#29A8FF",
       widthButton: 12.6,
       heightButton: 3.875,
@@ -175,7 +172,7 @@ export function Calculadora() {
     {
       backgroundColor: "#363035",
       value: ".",
-      text: ".", 
+      text: ".",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -183,138 +180,176 @@ export function Calculadora() {
     },
   ];
 
+  // ------------------------------
+  // * FUNÇÃO MANTER UM HISTÓRICO DOS VALORES DIGITADOS.
 
-// ------------------------------
-// * FUNÇÃO MANTER UM HISTÓRICO DOS VALORES DIGITADOS. 
+  const [contador, setContador] = useState(0);
 
-const [contador, setContador] = useState(0);
+  function funcButton(value) {
+    setContador((prevState) => String(prevState) + String(value));
+  }
 
-function funcButton(value) {
-  setContador((prevState) => prevState + value);
+  // ------------------------------
+  // * FUNÇÃO PARA CANCELAR O CALCULO.
+
+  function handleCancelar() {
+    setContador("");
+  }
+
+  // ------------------------------
+  // ! FUNÇÃO PARA APAGAR O ÚLTIMO O CARACTER DO CALCULO.
+
+  // function handleDeletar(value) {
+  //   const array = setContador.split("");
+  //   setContador.substring(0,-1);
+  // }
+
+  // ------------------------------
+  // * FUNÇÃO PARA FAZER OS CALCULOS.
+
+  function handleCalcular() {
+    const resultado = eval(String(contador));
+    setContador(resultado)
+  }
+
+
+  return (
+    <Container>
+      <Content>
+        <header>
+          <h1>{contador ? contador : 0}</h1>
+        </header>
+
+        <article>
+          <h2> = {contador}</h2>
+        </article>
+      </Content>
+
+      <Section>
+        <article>
+          <Area>
+            {row1.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+                Img={el.Img}
+                placeholder={el.placeholder}
+                text={el.text}
+                onClick={() =>
+                  el.type && el.type === "cancelar"
+                    ? handleCancelar(el.value)
+                    : el.type === "deletar"
+                    ? handleDeletar(el.value)
+                    : el.type === "calc"
+                    ? handleCalcular()
+                    : funcButton(el.value)
+                }
+                // onClick={() => {
+                //   (el.type === "cancelar" && handleCancelar(el.value)) ||
+                //     (el.type === "deletar" && handleDeletar(el.value)) ||
+                //     (el.type === "calc" && handleCalcular()) ||
+                //     funcButton(el.value);
+                // }}
+              />
+            ))}
+          </Area>
+
+          <Area>
+            {row2.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+                text={el.text}
+                onClick={() =>
+                  el.type && el.type === "cancelar"
+                    ? handleCancelar(el.value)
+                    : el.type === "deletar"
+                    ? handleDeletar(el.value)
+                    : el.type === "calc"
+                    ? handleCalcular()
+                    : funcButton(el.value)
+                }
+              />
+            ))}
+          </Area>
+
+          <Area>
+            {row3.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+                text={el.text}
+                onClick={() =>
+                  el.type && el.type === "cancelar"
+                    ? handleCancelar(el.value)
+                    : el.type === "deletar"
+                    ? handleDeletar(el.value)
+                    : el.type === "calc"
+                    ? handleCalcular()
+                    : funcButton(el.value)
+                }
+              />
+            ))}
+          </Area>
+
+          <Area>
+            {row4.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                backgroundHover={el.backgroundHover}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+                text={el.text}
+                onClick={() =>
+                  el.type && el.type === "cancelar"
+                    ? handleCancelar(el.value)
+                    : el.type === "deletar"
+                    ? handleDeletar(el.value)
+                    : el.type === "calc"
+                    ? handleCalcular()
+                    : funcButton(el.value)
+                }
+              />
+            ))}
+          </Area>
+
+          <Area>
+            {row5.map((el) => (
+              <Teclas
+                backgroundColor={el.backgroundColor}
+                value={el.value}
+                colorFont={el.colorFont}
+                widthButton={el.widthButton}
+                heightButton={el.heightButton}
+                text={el.text}
+                onClick={() =>
+                  el.type && el.type === "cancelar"
+                    ? handleCancelar(el.value)
+                    : el.type === "deletar"
+                    ? handleDeletar(el.value)
+                    : el.type === "calc"
+                    ? handleCalcular()
+                    : funcButton(el.value)
+                }
+              />
+            ))}
+          </Area>
+        </article>
+      </Section>
+    </Container>
+  );
 }
-
-// ------------------------------
-// * FUNÇÃO PARA CANCELAR O CALCULO. 
-
-function handleCancelar() {
-  setContador("");
-}
-
-// ------------------------------
-// ! FUNÇÃO PARA APAGAR O ÚLTIMO O CARACTER DO CALCULO. 
-
-// function handleDeletar(value) {
-//   const array = setContador.split("");
-//   setContador.substring(0,-1); 
-// }
-
-// ------------------------------
-// * FUNÇÃO PARA FAZER OS CALCULOS. 
-
-function handleCalcular() { 
-     (eval(setContador))
-     console.log(setContador);
- }
-
-useEffect(() => {
-  console.log(contador);
-}, [contador]);
-
-return (
-  <Container>
-    <Content>
-      <header>
-        <h1 placeholder="0">{contador}</h1>
-      </header>
-
-      <article>
-        <h2> = </h2>
-      </article>
-    </Content>
-
-    <Section>
-      <article>
-        <Area>
-          {row1.map((el) => (
-            <Teclas
-              backgroundColor={el.backgroundColor}
-              backgroundHover={el.backgroundHover}
-              value={el.value}
-              colorFont={el.colorFont}
-              widthButton={el.widthButton}
-              heightButton={el.heightButton}
-              Img={el.Img}
-              placeholder={el.placeholder}
-              text={el.text}
-              onClick={() => {
-              (el.type === "cancelar")
-                  && handleCancelar(el.value) 
-                   || el.type === "deletar" && handleDeletar(el.value)
-                   || funcButton(el.value) || el.type === "calcular" && handleCalcular(el.value); 
-              }}
-            />
-          ))}
-        </Area>
-
-        <Area>
-          {row2.map((el) => (
-            <Teclas
-              backgroundColor={el.backgroundColor}
-              backgroundHover={el.backgroundHover}
-              value={el.value}
-              colorFont={el.colorFont}
-              widthButton={el.widthButton}
-              heightButton={el.heightButton}
-              text={el.text}
-              onClick={() => funcButton(el.value)}
-            />
-          ))}
-        </Area>
-
-        <Area>
-          {row3.map((el) => (
-            <Teclas
-              backgroundColor={el.backgroundColor}
-              backgroundHover={el.backgroundHover}
-              value={el.value}
-              colorFont={el.colorFont}
-              widthButton={el.widthButton}
-              heightButton={el.heightButton}
-              text={el.text}
-              onClick={() => funcButton(el.value)}
-            />
-          ))}
-        </Area>
-
-        <Area>
-          {row4.map((el) => (
-            <Teclas
-              backgroundColor={el.backgroundColor}
-              backgroundHover={el.backgroundHover}
-              value={el.value}
-              colorFont={el.colorFont}
-              widthButton={el.widthButton}
-              heightButton={el.heightButton}
-              text={el.text}
-              onClick={() => funcButton(el.value)}
-            />
-          ))}
-        </Area>
-
-        <Area>
-          {row5.map((el) => (
-            <Teclas
-              backgroundColor={el.backgroundColor}
-              value={el.value}
-              colorFont={el.colorFont}
-              widthButton={el.widthButton}
-              heightButton={el.heightButton}
-              text={el.text}
-              onClick={() => funcButton(el.value)}
-            />
-          ))}
-        </Area>
-      </article>
-    </Section>
-  </Container>
-)}
