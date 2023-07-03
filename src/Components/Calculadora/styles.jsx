@@ -13,6 +13,7 @@ export const Container = styled.main`
   padding-top: 8rem;
   gap: 3rem;
   word-break: break-all;
+  
 `;
 
 export const Content = styled.header`
@@ -27,10 +28,21 @@ export const Content = styled.header`
   width: 300px;
   word-break: break-all;
 
+div{
+    color: #fff;
+    background: #58C8F9;
+    border-radius: 100px;
+    height: 5rem;
+    width: 9rem;
+    filter: blur(35px);
+    margin-bottom: 6rem; 
+    margin-left: 11rem; 
+   }
+
   header{
    display: flex;
    justify-content: center;
-
+   
 
   h1 {
     display: flex;

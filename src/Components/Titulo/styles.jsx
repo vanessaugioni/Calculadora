@@ -22,5 +22,12 @@ export const Content = styled.main`
     &:hover {
       color: #740076;
     }
+
   }
+
+
+    /* filter: blur(30px); // usar para esfumar  */
+
+
+  
 `;

@@ -14,6 +14,7 @@ export const Botao = styled.button`
   font-family: Poppins;
   font-weight: 500;
 
+
   background-color: ${(props)=> props.backgroundColor}; 
   border: none; 
   border-radius: 15px;
@@ -33,6 +34,4 @@ export const Botao = styled.button`
 `
 
 
-// biblioteca de estilização/movimento. 
-// react - tooltip
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, Content, Section, Area } from "./styles";
 import { Teclas } from "../Teclas";
-import { iconDelete } from "../../assets/export";
+import { iconDelete} from "../../assets/export";
 
 export function Calculadora() {
   const row1 = [
@@ -32,6 +32,7 @@ export function Calculadora() {
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
+      backgroundHover: "#740060",
     },
     {
       backgroundColor: "#740076",
@@ -40,6 +41,7 @@ export function Calculadora() {
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
+      backgroundHover: "#740060",
     },
   ];
 
@@ -78,6 +80,7 @@ export function Calculadora() {
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
+      backgroundHover: "#740060",
     },
   ];
 
@@ -116,6 +119,7 @@ export function Calculadora() {
       colorFont: "#A5A5A5",
       widthButton: 3.875,
       heightButton: 3.875,
+      backgroundHover: "#740060",
     },
   ];
 
@@ -183,7 +187,7 @@ export function Calculadora() {
   // ------------------------------
   // * FUNÇÃO MANTER UM HISTÓRICO DOS VALORES DIGITADOS.
 
-  const [contador, setContador] = useState(0);
+  const [contador, setContador] = useState("");
 
   function funcButton(value) {
     setContador((prevState) => String(prevState) + String(value));
@@ -215,13 +219,17 @@ export function Calculadora() {
 
   return (
     <Container>
-      <Content>
-        <header>
+    
+      <Content> 
+        <div></div>
+       
+        <header>  
+        
           <h1>{contador ? contador : 0}</h1>
         </header>
 
         <article>
-          <h2> = {contador}</h2>
+          <h2>= 423</h2>
         </article>
       </Content>
 
@@ -248,12 +256,7 @@ export function Calculadora() {
                     ? handleCalcular()
                     : funcButton(el.value)
                 }
-                // onClick={() => {
-                //   (el.type === "cancelar" && handleCancelar(el.value)) ||
-                //     (el.type === "deletar" && handleDeletar(el.value)) ||
-                //     (el.type === "calc" && handleCalcular()) ||
-                //     funcButton(el.value);
-                // }}
+            
               />
             ))}
           </Area>
@@ -349,7 +352,8 @@ export function Calculadora() {
             ))}
           </Area>
         </article>
-      </Section>
+      </Section> 
     </Container>
+   
   );
 }

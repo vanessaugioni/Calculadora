@@ -11,7 +11,7 @@ height: 786px;
 border-radius: 40px;
 border: 12px solid #740076;
 backdrop-filter: blur(10px);
-
+overflow: hidden;
 
 
 
