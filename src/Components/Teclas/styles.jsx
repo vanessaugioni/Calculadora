@@ -10,7 +10,7 @@ export const Botao = styled.button`
 
   width: ${(props)=> `${props.widthButton}rem`}; 
   height: ${(props)=> `${props.heightButton}rem`};  
-  font-size: 28px;
+  font-size: 25px;
   font-family: Poppins;
   font-weight: 500;
 
@@ -28,7 +28,7 @@ export const Botao = styled.button`
    background-color: ${(props) => props.backgroundHover};
    border: 2.5px solid black;  
    color: white; 
-   font-size: 32px;
+   font-size: 28px;
   }
 
 `

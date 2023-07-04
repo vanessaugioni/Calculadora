@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Container, Content, Section, Area } from "./styles";
-import { Teclas } from "../Teclas";
-import { iconDelete} from "../../assets/export";
+import React, { useEffect, useState } from "react"; // Importação para uso do React; 
+import { Container, Content, Section, Area, Style } from "./styles"; // Importação do styled-components
+import { Teclas } from "../Teclas"; // Importação de um componente
+import { iconDelete} from "../../assets/export"; // Importação de uma imagem 
 
-export function Calculadora() {
+export function Calculadora() {  // Props para configurar os botões
   const row1 = [
     {
       backgroundColor: "#4B4B4B6B",
@@ -57,8 +57,8 @@ export function Calculadora() {
     },
     {
       backgroundColor: "#363035",
-      value: 9,
-      text: "9",
+      value: 8,
+      text: "8",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -66,8 +66,8 @@ export function Calculadora() {
     },
     {
       backgroundColor: "#363035",
-      value: 8,
-      text: "8",
+      value: 9,
+      text: "9",
       colorFont: "#29A8FF",
       widthButton: 3.875,
       heightButton: 3.875,
@@ -185,59 +185,65 @@ export function Calculadora() {
   ];
 
   // ------------------------------
-  // * FUNÇÃO MANTER UM HISTÓRICO DOS VALORES DIGITADOS.
+  // ? FUNÇÃO MANTER UM HISTÓRICO DOS VALORES DIGITADOS.
 
-  const [contador, setContador] = useState("");
+  const [contador, setContador] = useState(""); // Guardar o histórico da conta 
 
-  function funcButton(value) {
+  const [result, setResult] = useState("");  // Guardar o resuly=tadi da cineta  histórico da conta 
+
+  function funcButton(value) { //Função para guardar as informações e mostrar o hostórico de dígitos. 
     setContador((prevState) => String(prevState) + String(value));
   }
 
   // ------------------------------
-  // * FUNÇÃO PARA CANCELAR O CALCULO.
+  // ? FUNÇÃO PARA CANCELAR O CALCULO
 
-  function handleCancelar() {
-    setContador("");
+  function handleCancelar() { // Cancelar(zerrar) o cálculo de 
+    setContador("") // Zerar valores do calculo. 
+    setResult("") // Zerar valor do resultado. 
   }
 
   // ------------------------------
-  // ! FUNÇÃO PARA APAGAR O ÚLTIMO O CARACTER DO CALCULO.
+  // ? FUNÇÃO PARA APAGAR O ÚLTIMO O CARACTER DO CALCULO.
+  // Excluir último caracter do cúlculo. 
 
-  // function handleDeletar(value) {
-  //   const array = setContador.split("");
-  //   setContador.substring(0,-1);
-  // }
+  function handleDeletar() {
+    const array = contador.substring(0, contador.length -1)
+    setContador(array)
+  }
 
   // ------------------------------
-  // * FUNÇÃO PARA FAZER OS CALCULOS.
+  // ? FUNÇÃO PARA FAZER OS CALCULOS.
+ //Função utilizada para fazer os cálculos dos valorees digitados
 
   function handleCalcular() {
     const resultado = eval(String(contador));
-    setContador(resultado)
+    setResult(resultado)
+    
   }
 
-
-  return (
+  return (  // Retorno com as respostas e componentes
     <Container>
     
       <Content> 
-        <div></div>
+        <div className="sombra1">""</div> // Sombra de estilização 
        
         <header>  
         
-          <h1>{contador ? contador : 0}</h1>
+          <h1>{contador ? contador : 0}</h1> 
         </header>
 
         <article>
-          <h2>= 423</h2>
+          <h2>= {result ? result : 0}</h2>
         </article>
       </Content>
+
 
       <Section>
         <article>
           <Area>
             {row1.map((el) => (
-              <Teclas
+              <Teclas // Propriedades do botão!
                 backgroundColor={el.backgroundColor}
                 backgroundHover={el.backgroundHover}
                 value={el.value}
@@ -353,6 +359,10 @@ export function Calculadora() {
           </Area>
         </article>
       </Section> 
+      <Style> 
+      <div className="sombra2">""</div> // Sombra de estilização 
+      <div className="sombra3">""</div> // Sombra de estilização 
+      </Style>
     </Container>
    
   );

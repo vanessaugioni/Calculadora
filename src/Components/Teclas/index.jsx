@@ -19,7 +19,7 @@ export function Teclas(props) {
   const srcImage = Img && Object.values(Img)[0]
 
   return (
-    <Botao
+    <Botao //Propriedades do botão
       backgroundColor={backgroundColor}
       backgroundHover={backgroundHover}
       colorFont={colorFont}
@@ -30,7 +30,7 @@ export function Teclas(props) {
 
       {...rest}
     >
-      {Img ? <img src={srcImage} alt="" /> : text}
+      {Img ? <img src={srcImage} alt="" /> : text} // Apresentar o os resultados 
     </Botao>
   );
 }
