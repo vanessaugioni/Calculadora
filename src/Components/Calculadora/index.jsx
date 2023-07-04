@@ -185,7 +185,7 @@ export function Calculadora() {  // Props para configurar os botões
   ];
 
   // ------------------------------
-  // ? FUNÇÃO MANTER UM HISTÓRICO DOS VALORES DIGITADOS.
+  // * FUNÇÃO MANTER UM HISTÓRICO DOS VALORES DIGITADOS.
 
   const [contador, setContador] = useState(""); // Guardar o histórico da conta 
 
@@ -196,7 +196,7 @@ export function Calculadora() {  // Props para configurar os botões
   }
 
   // ------------------------------
-  // ? FUNÇÃO PARA CANCELAR O CALCULO
+  // * FUNÇÃO PARA CANCELAR O CALCULO
 
   function handleCancelar() { // Cancelar(zerrar) o cálculo de 
     setContador("") // Zerar valores do calculo. 
@@ -204,7 +204,7 @@ export function Calculadora() {  // Props para configurar os botões
   }
 
   // ------------------------------
-  // ? FUNÇÃO PARA APAGAR O ÚLTIMO O CARACTER DO CALCULO.
+  // * FUNÇÃO PARA APAGAR O ÚLTIMO O CARACTER DO CALCULO.
   // Excluir último caracter do cúlculo. 
 
   function handleDeletar() {
@@ -213,14 +213,23 @@ export function Calculadora() {  // Props para configurar os botões
   }
 
   // ------------------------------
-  // ? FUNÇÃO PARA FAZER OS CALCULOS.
+  // * FUNÇÃO PARA FAZER OS CALCULOS.
  //Função utilizada para fazer os cálculos dos valorees digitados
 
   function handleCalcular() {
     const resultado = eval(String(contador));
     setResult(resultado)
-    
+
+
+    setContador(resultado)
+
+
+
+
   }
+
+// ------------------------------
+
 
   return (
     <Container>
