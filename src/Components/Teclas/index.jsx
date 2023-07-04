@@ -30,7 +30,7 @@ export function Teclas(props) {
 
       {...rest}
     >
-      {Img ? <img src={srcImage} alt="" /> : text} // Apresentar o os resultados 
+      {Img ? <img src={srcImage} alt="" /> : text}
     </Botao>
   );
 }

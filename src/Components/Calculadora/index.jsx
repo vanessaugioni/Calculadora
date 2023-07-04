@@ -222,15 +222,15 @@ export function Calculadora() {  // Props para configurar os botões
     
   }
 
-  return (  // Retorno com as respostas e componentes
+  return (
     <Container>
     
       <Content> 
-        <div className="sombra1">""</div> // Sombra de estilização 
+        <div className="sombra1">""</div>
        
         <header>  
         
-          <h1>{contador ? contador : 0}</h1> 
+          <h1>{contador ? contador : 0}</h1>
         </header>
 
         <article>
@@ -243,7 +243,7 @@ export function Calculadora() {  // Props para configurar os botões
         <article>
           <Area>
             {row1.map((el) => (
-              <Teclas // Propriedades do botão!
+              <Teclas
                 backgroundColor={el.backgroundColor}
                 backgroundHover={el.backgroundHover}
                 value={el.value}
@@ -360,8 +360,8 @@ export function Calculadora() {  // Props para configurar os botões
         </article>
       </Section> 
       <Style> 
-      <div className="sombra2">""</div> // Sombra de estilização 
-      <div className="sombra3">""</div> // Sombra de estilização 
+      <div className="sombra2">""</div>
+      <div className="sombra3">""</div>
       </Style>
     </Container>
    
